@@ -49,6 +49,11 @@ if [ $# -gt 0 ]; then
                         echo "    -r                         log backup status"
                         echo "    -h                         view help"
                         echo ""
+                        echo "Steps to setup:----------"
+                        echo "    1. Setup a watch directory using -s flag"
+                        echo "    2. Setup a Backup directory using -d flag"
+                        echo "    3. Use -r flag enter a log"
+                        echo ""
                         echo "*********************************************************************"
                         echo ""
                         ;;
@@ -59,7 +64,7 @@ if [ $# -gt 0 ]; then
         esac
 else
         source=$(</home/vipul/Desktop.__source)
-        des=$(<//home/vipul/Desktop.__des)
+        des=$(</home/vipul/Desktop.__des)
         # echo "No parameters, Actual backup job"
         # Find the base directory from -s address
         echo $source,$des
