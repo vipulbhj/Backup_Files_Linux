@@ -31,12 +31,27 @@ if [ $# -gt 0 ]; then
                         echo "##################################" >> $readme_loc
                         echo "Username:-  $name" >> $readme_loc
                         echo "Time:- $time" >> $readme_loc
-                        echo "Source Directory:- $source_prog" >> $readme_loc
-                        echo "Backup Directory:- $des_prog" >> $readme_loc
+                        echo "Source Directory:- $source" >> $readme_loc
+                        echo "Backup Directory:- $des" >> $readme_loc
                         ;;   
+                -h)
+                        echo "###########################################################"
+                        echo ""
+                        echo "                        Welcome to Disk Backup V 1.0"
+                        echo "This is the user guide for the utility."
+                        echo "Usage: backup"
+                        echo "   or: backup [OPTION]... path/"
+                        echo ""
+                        echo "Manditory arguments :---"
+                        echo "    -s                         path/to/source"
+                        echo "    -d                         path/to/destination"
+                        echo "    -r                         log backup status"
+                        echo ""
+                        echo "###########################################################"
+                        ;;
                 *)
                         echo "no such flag"
-                        exit 0
+                        echo "Try using backup -h"
                         ;;                   
         esac
 else
