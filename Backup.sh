@@ -53,8 +53,8 @@ if [ $# -gt 0 ]; then
                         echo ""
                         ;;
                 *)
-                        echo "no such flag"
-                        echo "Try using backup -h"
+                        echo "No such flag"
+                        echo "Try using:- backup -h"
                         ;;                   
         esac
 else
@@ -70,13 +70,14 @@ else
         file_1="$backup_source.1"
         file_2="$backup_source.2"
         file_3="$backup_source.3"
+        
         # Check if .3 exists
         if [ -d $file_3 ]; then
                 # Delete the file
                 rm -rf $file_3
         fi
-                # Check if .2 exists
-                if [ -d $file_2 ]; then
+        # Check if .2 exists
+        if [ -d $file_2 ]; then
                 # Delete the file
                 mv -v $file_2 $file_3
         fi
@@ -85,6 +86,7 @@ else
                 # Delete the file
                 mv -v $file_1 $file_2
         fi
+        
         # copy sourcedir current state into .1
         cp -R $source $file_1
 fi
